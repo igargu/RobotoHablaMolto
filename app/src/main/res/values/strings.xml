@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Roboto habla molto</string>
+    <string name="tvTitle"><u>Roboto habla molto</u></string>
+    <string name="tvTexto">Texto</string>
+    <string name="tvIdioma">Idioma</string>
+    <string name="btHablar">Habla roboto</string>
+    <string name="error_toast">El campo <b>Texto</b> no puedes estar vacío y debes elegir un idioma</string>
+</resources>
