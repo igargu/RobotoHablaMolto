@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -135,11 +136,11 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
      * @param message Mensaje que queremos que aparezca en el Toast
      */
     private void showToast(int message) {
-        Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
-        View toastView = toast.getView();
-        toastView.getBackground().setColorFilter(getResources().getColor(R.color.primary_color), PorterDuff.Mode.SRC_IN);
-        TextView tv = (TextView) toast.getView().findViewById(android.R.id.message);
-        tv.setTextColor(Color.WHITE);
+        Toast toast = new Toast(this);
+        View view = LayoutInflater.from(this).inflate(R.layout.toast_layout, null);
+        TextView tvToast = view.findViewById(R.id.tvMessage);
+        tvToast.setText(message);
+        toast.setView(view);
         toast.show();
     }
 }
